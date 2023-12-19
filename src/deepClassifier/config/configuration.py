@@ -3,7 +3,7 @@ from deepClassifier.utils import read_yaml, create_directory
 from deepClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig
 from pathlib import Path
 
-class DataIngestionManager:
+class ConfigurationManager:
     def __init__(self,
                 config_file_path = CONFIG_FILE_PATH,
                 params_file_path = PARAMS_FILE_PATH
@@ -39,5 +39,8 @@ class DataIngestionManager:
                                params_classes=self.params.CLASSES
         )
         return prepare_base_model_config
+    
+    def get_callbacks_config(self)-> PrepareCallbackConfig:
+
 
     
